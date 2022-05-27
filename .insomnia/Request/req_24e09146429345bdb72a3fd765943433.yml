@@ -1,0 +1,32 @@
+_id: req_24e09146429345bdb72a3fd765943433
+type: Request
+parentId: fld_de51228b04f64dbaa41db93d0171de85
+modified: 1653189828468
+created: 1653186742932
+url: "{{ _.baseUrl }}/categories/import"
+name: import
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - id: pair_29cd2e98be1844739b6e7cc1beccf670
+      name: file
+      value: ""
+      description: ""
+      type: file
+      fileName: /home/gabrielluan/Desktop/file.csv
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+    id: pair_e749a091f02142b0a5165f3a15d9b7fe
+authentication: {}
+metaSortKey: -1653010642780
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,30 @@
+_id: req_425dddd411df4eaab83f2e06f805eea4
+type: Request
+parentId: fld_de51228b04f64dbaa41db93d0171de85
+modified: 1653616756217
+created: 1653010642880
+url: "{{ _.baseUrl }}/categories"
+name: Create
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Sedan",
+    	"description": "Categoria de carro Sedan"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_a4d47f0d6e254604a2d82600dc5a6f9f
+authentication: {}
+metaSortKey: -1653010642880
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

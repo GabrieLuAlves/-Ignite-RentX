@@ -1,0 +1,29 @@
+_id: req_14dff55c3cf645f7ac82e9178ee33c68
+type: Request
+parentId: wrk_3449282ab63747d8a53cef1895286612
+modified: 1653009477797
+created: 1653009349977
+url: "{{ _.baseUrl }}/courses"
+name: Courses
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "NodeJS"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_f568da2b87844ea5b9441c4fedbfdde0
+authentication: {}
+metaSortKey: -1653009349977
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

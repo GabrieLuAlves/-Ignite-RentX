@@ -1,0 +1,30 @@
+_id: req_9f8fde1dda094f43b2a802207c069288
+type: Request
+parentId: fld_37f9d473b04f492a9ffac4bf51a40f19
+modified: 1653446089436
+created: 1653179924174
+url: "{{ _.baseUrl }}/specifications"
+name: Create
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Câmbio automático",
+    	"description": "Carro com câmbio altomático"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_41d35147ce24498b9d3d5c0dd9aeb634
+authentication: {}
+metaSortKey: -1653179924174
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
