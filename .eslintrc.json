@@ -18,8 +18,13 @@
 				"prettier"
     ],
     "rules": {
+			"no-useless-return": "off",
 			"no-use-before-define": "off",
 			"import/prefer-default-export": "off",
+			"no-console": "off",
+			"class-methods-use-this": "off",
+			"no-useless-constructor": "off",
+			"camelcase": "off",
 			"@typescript-eslint/no-use-before-define": [
 				"error"
 			],
