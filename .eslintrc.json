@@ -21,9 +21,11 @@
 			"no-useless-return": "off",
 			"no-use-before-define": "off",
 			"import/prefer-default-export": "off",
+      "no-shadow": "off",
 			"no-console": "off",
-			"class-methods-use-this": "off",
 			"no-useless-constructor": "off",
+      "lines-between-class-members": "off",
+			"class-methods-use-this": "off",
 			"camelcase": "off",
 			"@typescript-eslint/no-use-before-define": [
 				"error"
@@ -35,7 +37,14 @@
 						"ts": "never"
 					}
 			],
-			"prettier/prettier": "error"
+			"prettier/prettier": "error",
+      "sort-imports": [
+        "warn",
+        "ignorePackages",
+        {
+
+        }
+      ]
     },
 		"settings": {
 			"import/resolver": {
