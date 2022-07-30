@@ -12,3 +12,5 @@ AppDataSource.initialize()
     console.log('Error when connecting to database. See details below.');
     console.log(err);
   });
+
+export { AppDataSource };
