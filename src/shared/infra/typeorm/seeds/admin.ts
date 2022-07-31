@@ -1,10 +1,10 @@
-import { hash } from 'bcrypt';
-import { v4 as uuidV4 } from 'uuid';
-import getDataSource from '@shared/infra/typeorm';
+import { hash } from "bcrypt";
+import { v4 as uuidV4 } from "uuid";
+import getDataSource from "@shared/infra/typeorm";
 
 async function create() {
   const id = uuidV4();
-  const password = await hash('admin', 8);
+  const password = await hash("admin", 8);
 
   const AppDataSource = await getDataSource();
 
@@ -16,4 +16,4 @@ async function create() {
   AppDataSource.destroy();
 }
 
-create().then(() => console.log('Created admin'));
+create().then(() => console.log("Created admin"));

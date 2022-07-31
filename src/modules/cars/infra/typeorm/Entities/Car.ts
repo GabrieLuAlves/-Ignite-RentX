@@ -5,11 +5,11 @@ import {
   JoinColumn,
   ManyToOne,
   PrimaryColumn,
-} from 'typeorm';
-import { v4 as uuidV4 } from 'uuid';
-import { Category } from './Category';
+} from "typeorm";
+import { v4 as uuidV4 } from "uuid";
+import { Category } from "./Category";
 
-@Entity('cars')
+@Entity("cars")
 class Car {
   @PrimaryColumn()
   id: string;
@@ -36,7 +36,7 @@ class Car {
   brand: string;
 
   @ManyToOne(() => Category)
-  @JoinColumn({ name: 'category_id', referencedColumnName: 'id' })
+  @JoinColumn({ name: "category_id", referencedColumnName: "id" })
   category: Category;
 
   @Column()

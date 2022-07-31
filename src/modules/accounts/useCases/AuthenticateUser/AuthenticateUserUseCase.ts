@@ -1,8 +1,8 @@
-import { compare } from 'bcrypt';
-import { sign } from 'jsonwebtoken';
-import { inject, injectable } from 'tsyringe';
-import { AppError } from '@shared/errors/AppError';
-import { IUserRepository } from '@modules/accounts/infra/typeorm/repositories/IUserRepository';
+import { compare } from "bcrypt";
+import { sign } from "jsonwebtoken";
+import { inject, injectable } from "tsyringe";
+import { AppError } from "@shared/errors/AppError";
+import { IUserRepository } from "@modules/accounts/infra/typeorm/repositories/IUserRepository";
 
 interface IRequest {
   email: string;
@@ -20,7 +20,7 @@ interface IResponse {
 @injectable()
 class AuthenticateUserUseCase {
   constructor(
-    @inject('UsersRepository')
+    @inject("UsersRepository")
     private usersRepository: IUserRepository,
   ) {}
 
@@ -28,18 +28,18 @@ class AuthenticateUserUseCase {
     const user = await this.usersRepository.findByEmail(email);
 
     if (!user) {
-      throw new AppError('Email or password incorrect');
+      throw new AppError("Email or password incorrect");
     }
 
     const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
-      throw new AppError('Email or password incorrect');
+      throw new AppError("Email or password incorrect");
     }
 
-    const token = sign({}, '0275911a3c5fc09371ef11bcbbad8806fe3be453', {
+    const token = sign({}, "0275911a3c5fc09371ef11bcbbad8806fe3be453", {
       subject: user.id,
-      expiresIn: '1d',
+      expiresIn: "1d",
     });
 
     const response: IResponse = {

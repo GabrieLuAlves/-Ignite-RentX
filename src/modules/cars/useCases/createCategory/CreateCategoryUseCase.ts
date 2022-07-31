@@ -1,14 +1,14 @@
-import { inject, injectable } from 'tsyringe';
-import { AppError } from '@shared/errors/AppError';
+import { inject, injectable } from "tsyringe";
+import { AppError } from "@shared/errors/AppError";
 import {
   ICategoryRepository,
   ICreateCategoryDTO,
-} from '@modules/cars/repositories/ICategoriesRepository';
+} from "@modules/cars/repositories/ICategoriesRepository";
 
 @injectable()
 class CreateCategoryUseCase {
   constructor(
-    @inject('CategoriesRepository')
+    @inject("CategoriesRepository")
     private categoriesRepository: ICategoryRepository,
   ) {}
 
@@ -18,7 +18,7 @@ class CreateCategoryUseCase {
     );
 
     if (categoryAlreadyExists) {
-      throw new AppError('Category already exists!');
+      throw new AppError("Category already exists!");
     }
 
     this.categoriesRepository.create({ name, description });

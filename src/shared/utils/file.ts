@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from "fs";
 
 export async function deleteFile(filename: string) {
   try {

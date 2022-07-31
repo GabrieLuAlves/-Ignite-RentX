@@ -1,27 +1,27 @@
-import { AppError } from '@shared/errors/AppError';
-import { ICreateUserDTO } from '@modules/accounts/dtos/ICreateUserDTO';
-import { UsersRepositoryInMemory } from '@modules/accounts/infra/typeorm/repositories/in-memory/UsersRepositoryInMemory';
-import { IUserRepository } from '@modules/accounts/infra/typeorm/repositories/IUserRepository';
-import { CreateUserUseCase } from '@modules/accounts/useCases/createUser/createUserUseCase';
-import { AuthenticateUserUseCase } from './AuthenticateUserUseCase';
+import { AppError } from "@shared/errors/AppError";
+import { ICreateUserDTO } from "@modules/accounts/dtos/ICreateUserDTO";
+import { UsersRepositoryInMemory } from "@modules/accounts/infra/typeorm/repositories/in-memory/UsersRepositoryInMemory";
+import { IUserRepository } from "@modules/accounts/infra/typeorm/repositories/IUserRepository";
+import { CreateUserUseCase } from "@modules/accounts/useCases/createUser/createUserUseCase";
+import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
 
 let usersRepository: IUserRepository;
 let authenticateUserUseCase: AuthenticateUserUseCase;
 let createUserUseCase: CreateUserUseCase;
 
-describe('Authenticate user', () => {
+describe("Authenticate user", () => {
   beforeEach(() => {
     usersRepository = new UsersRepositoryInMemory();
     authenticateUserUseCase = new AuthenticateUserUseCase(usersRepository);
     createUserUseCase = new CreateUserUseCase(usersRepository);
   });
 
-  it('should be able to authenticate user', async () => {
+  it("should be able to authenticate user", async () => {
     const user: ICreateUserDTO = {
-      name: 'User 01',
-      email: 'user01@email.com',
-      password: 'User password 01',
-      driver_license: '010101',
+      name: "User 01",
+      email: "user01@email.com",
+      password: "User password 01",
+      driver_license: "010101",
     };
 
     await createUserUseCase.execute(user);
@@ -31,32 +31,32 @@ describe('Authenticate user', () => {
       password: user.password,
     });
 
-    expect(result).toHaveProperty('token');
+    expect(result).toHaveProperty("token");
   });
 
-  it('should not be able to authenticate a nonexistent user', () => {
+  it("should not be able to authenticate a nonexistent user", () => {
     expect(async () => {
       await authenticateUserUseCase.execute({
-        email: 'nonexistent@email.com',
-        password: 'fakepassword',
+        email: "nonexistent@email.com",
+        password: "fakepassword",
       });
     }).rejects.toBeInstanceOf(AppError);
   });
 
-  it('should not be able to authenticate with incorrect password', () => {
+  it("should not be able to authenticate with incorrect password", () => {
     expect(async () => {
       const user: ICreateUserDTO = {
-        name: 'User 01',
-        email: 'user01@email.com',
-        password: 'User password 01',
-        driver_license: '010101',
+        name: "User 01",
+        email: "user01@email.com",
+        password: "User password 01",
+        driver_license: "010101",
       };
 
       await createUserUseCase.execute(user);
 
       await authenticateUserUseCase.execute({
         email: user.email,
-        password: 'wrongpassword',
+        password: "wrongpassword",
       });
     }).rejects.toBeInstanceOf(AppError);
   });

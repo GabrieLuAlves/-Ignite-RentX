@@ -1,7 +1,7 @@
-import { inject, injectable } from 'tsyringe';
-import { deleteFile } from '@shared/utils/file';
+import { inject, injectable } from "tsyringe";
+import { deleteFile } from "@shared/utils/file";
 
-import { IUserRepository } from '../../infra/typeorm/repositories/IUserRepository';
+import { IUserRepository } from "../../infra/typeorm/repositories/IUserRepository";
 
 interface IRequest {
   id: string;
@@ -11,7 +11,7 @@ interface IRequest {
 @injectable()
 class UpdateUserAvatarUseCase {
   constructor(
-    @inject('UsersRepository')
+    @inject("UsersRepository")
     private usersRepository: IUserRepository,
   ) {}
 

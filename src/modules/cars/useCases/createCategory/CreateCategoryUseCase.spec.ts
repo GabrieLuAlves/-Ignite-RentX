@@ -1,11 +1,11 @@
-import { AppError } from '@shared/errors/AppError';
-import { CategoriesRepositoryInMemory } from '@modules/cars/repositories/in-memory/CategoriesRepositoryInMemory';
-import { CreateCategoryUseCase } from './CreateCategoryUseCase';
+import { AppError } from "@shared/errors/AppError";
+import { CategoriesRepositoryInMemory } from "@modules/cars/repositories/in-memory/CategoriesRepositoryInMemory";
+import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 
 let categoriesRepositoryInMemory: CategoriesRepositoryInMemory;
 let createCategoryUseCase: CreateCategoryUseCase;
 
-describe('Criar categoria', () => {
+describe("Criar categoria", () => {
   beforeEach(() => {
     categoriesRepositoryInMemory = new CategoriesRepositoryInMemory();
     createCategoryUseCase = new CreateCategoryUseCase(
@@ -13,10 +13,10 @@ describe('Criar categoria', () => {
     );
   });
 
-  it('should be able to create a new category', async () => {
+  it("should be able to create a new category", async () => {
     const category = {
-      name: 'Category Test',
-      description: 'Category description test',
+      name: "Category Test",
+      description: "Category description test",
     };
 
     await createCategoryUseCase.execute(category);
@@ -25,14 +25,14 @@ describe('Criar categoria', () => {
       category.name,
     );
 
-    expect(categoryCreated).toHaveProperty('id');
+    expect(categoryCreated).toHaveProperty("id");
   });
 
-  it('should not be able to create a category if another one with the same name already exists', async () => {
+  it("should not be able to create a category if another one with the same name already exists", async () => {
     expect(async () => {
       const category = {
-        name: 'Category Test',
-        description: 'Category description test',
+        name: "Category Test",
+        description: "Category description test",
       };
 
       await createCategoryUseCase.execute({

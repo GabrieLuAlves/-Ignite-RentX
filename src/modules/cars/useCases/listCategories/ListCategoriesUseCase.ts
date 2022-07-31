@@ -1,11 +1,11 @@
-import { inject, injectable } from 'tsyringe';
-import { Category } from '@modules/cars/infra/typeorm/Entities/Category';
-import { ICategoryRepository } from '@modules/cars/repositories/ICategoriesRepository';
+import { inject, injectable } from "tsyringe";
+import { Category } from "@modules/cars/infra/typeorm/Entities/Category";
+import { ICategoryRepository } from "@modules/cars/repositories/ICategoriesRepository";
 
 @injectable()
 class ListCategoriesUseCase {
   constructor(
-    @inject('CategoriesRepository')
+    @inject("CategoriesRepository")
     private categoriesRepository: ICategoryRepository,
   ) {}
 

@@ -1,7 +1,7 @@
-import { Car } from '@modules/cars/infra/typeorm/Entities/Car';
-import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository';
-import { AppError } from '@shared/errors/AppError';
-import { inject, injectable } from 'tsyringe';
+import { Car } from "@modules/cars/infra/typeorm/Entities/Car";
+import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
+import { AppError } from "@shared/errors/AppError";
+import { inject, injectable } from "tsyringe";
 
 interface IRequest {
   name: string;
@@ -16,7 +16,7 @@ interface IRequest {
 @injectable()
 class CreateCarUseCase {
   constructor(
-    @inject('CarsRepository')
+    @inject("CarsRepository")
     private carsRepository: ICarsRepository,
   ) {}
 
@@ -34,7 +34,7 @@ class CreateCarUseCase {
     );
 
     if (carAlreadyExists) {
-      throw new AppError('Car already exists!');
+      throw new AppError("Car already exists!");
     }
 
     const car = await this.carsRepository.create({

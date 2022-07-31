@@ -1,7 +1,7 @@
-import { Repository } from 'typeorm';
-import { AppDataSource } from '@shared/infra/typeorm';
-import { Category } from '../Entities/Category';
-import { ICategoryRepository } from '../../../repositories/ICategoriesRepository';
+import { Repository } from "typeorm";
+import { AppDataSource } from "@shared/infra/typeorm";
+import { Category } from "../Entities/Category";
+import { ICategoryRepository } from "../../../repositories/ICategoriesRepository";
 
 interface ICreateCategoryDTO {
   name: string;
