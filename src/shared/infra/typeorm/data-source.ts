@@ -11,6 +11,7 @@ import { CreateUsers1653869582974 } from "./migrations/1653869582974-CreateUsers
 import { AlterUserDeleteUsername1653879351054 } from "./migrations/1653879351054-AlterUserDeleteUsername";
 import { AlterUserAddAvatar1656592156408 } from "./migrations/1656592156408-AlterUserAddAvatar";
 import { CreateCars1659140482314 } from "./migrations/1659140482314-CreateCars";
+import { CreateSpecificationsCars1659447171657 } from "./migrations/1659447171657-CreateSpecificationsCars";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -27,5 +28,6 @@ export const AppDataSource = new DataSource({
     AlterUserDeleteUsername1653879351054,
     AlterUserAddAvatar1656592156408,
     CreateCars1659140482314,
+    CreateSpecificationsCars1659447171657,
   ],
 });
