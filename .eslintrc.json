@@ -19,6 +19,7 @@
     ],
     "rules": {
       "quotes": "off",
+      "no-empty-function": "off",
 			"no-useless-return": "off",
 			"no-use-before-define": "off",
 			"import/prefer-default-export": "off",
@@ -28,7 +29,6 @@
       "lines-between-class-members": "off",
 			"class-methods-use-this": "off",
 			"camelcase": "off",
-      "no-empty-function": "off",
 			"@typescript-eslint/no-use-before-define": [
 				"error"
 			],
