@@ -2,12 +2,11 @@
 
 **RF**
 Deve ser possível cadastrar um carro
-Deve ser possível listar todas as categorías
 
 **RN**
 Não deve ser possível cadastrar um carro com uma placa já existente
 O carro deve ser cadastrado, por padrão, com disponibilidade
--postponed- O usuário responsável pelo cadastro deve ser um usuário administrador
+O usuário responsável pelo cadastro deve ser um usuário administrador
 
 # Listagem de carros
 
@@ -34,7 +33,6 @@ O usuário responsável pelo cadastro deve ser um administrador
 
 **RF**
 Deve ser possível cadastrar a imagem do carro
-Deve ser possível listar todos os carros
 
 **RNF**
 Utilizar o mutter para upload dos arquivos
