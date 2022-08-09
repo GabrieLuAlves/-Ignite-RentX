@@ -6,7 +6,7 @@ async function create() {
   const id = uuidV4();
   const password = await hash("admin", 8);
 
-  const AppDataSource = await getDataSource();
+  const AppDataSource = getDataSource();
 
   await AppDataSource.query(
     `INSERT INTO USERS(id, name, email, password, driver_license, "isAdmin", created_at)
